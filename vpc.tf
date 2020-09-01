@@ -1,7 +1,9 @@
 module "vpc" {
   source = "app.terraform.io/victord/vpc/aws"
   version = "2.48.0"
+
   # insert required variables here
+
   name = "my-vpc"
   cidr = "10.0.0.0/16"
   azs = ["us-east-1a", "us-east-1b", "us-east-1c"]
