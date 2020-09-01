@@ -8,7 +8,9 @@ resource aws_vpc "hashicat" {
   enable_dns_hostnames = true
 
   tags = {
-    name = "${var.prefix}-vpc"
+    name = "${var.prefix}-vpc",
+    Billable = "true",
+    Department = "devops"
   }
 }
 
@@ -17,7 +19,9 @@ resource aws_subnet "hashicat" {
   cidr_block = var.subnet_prefix
 
   tags = {
-    name = "${var.prefix}-subnet"
+    name = "${var.prefix}-subnet",
+    Billable = "true",
+    Department = "devops"
   }
 }
 
@@ -56,7 +60,9 @@ resource aws_security_group "hashicat" {
   }
 
   tags = {
-    Name = "${var.prefix}-security-group"
+    Name = "${var.prefix}-security-group",
+    Billable = "true",
+    Department = "devops"
   }
 }
 
@@ -69,7 +75,9 @@ resource aws_internet_gateway "hashicat" {
   vpc_id = aws_vpc.hashicat.id
 
   tags = {
-    Name = "${var.prefix}-internet-gateway"
+    Name = "${var.prefix}-internet-gateway",
+    Billable = "true",
+    Department = "devops"
   }
 }
 
